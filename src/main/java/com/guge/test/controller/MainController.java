@@ -26,7 +26,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "student",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
-    public @ResponseBody String getStudentList(HttpServletRequest request, HttpServletResponse response){
+    @ResponseBody
+    public  String getStudentList(HttpServletRequest request, HttpServletResponse response){
         StudentService service=new StudentServiceImpl();
         List<Students> list=service.getAllStudents();
         ListObject object=new ListObject();
